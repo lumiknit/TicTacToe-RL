@@ -1,2 +1,2 @@
 # TicTacToe-RL
-RL for tic tac toe
+RL for tic tac toe with PyTorch
