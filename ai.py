@@ -247,13 +247,16 @@ if __name__ == "__main__":
     elif x == 'R': # Calculate winning rate of model vs random
       count = 0
       win = 0
+      draw = 0
+      lose = 0
       for i in range(100):
         count += 1
         res = runGame(modelAction, randAction)
         if res == 1: win += 1
-        elif res == 0: win += 0.5
-      print("Model win rate {:.4f} ({} / {})".format(
-        win / count, win, count))
+        elif res == 0: draw  += 1
+        else: lose += 1
+      print("Model win rate {:.4f} (w {} / d {} / l {})".format(
+        win / count, win, draw, lose))
     elif x == 'P': # model vs human
       runGame(modelAction, None)
 
